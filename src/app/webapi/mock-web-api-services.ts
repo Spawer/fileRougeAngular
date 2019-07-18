@@ -3,23 +3,32 @@ import { WebApi } from './web-api';
 import { Observable, of } from 'rxjs';
 import { Candidate } from 'app/model/candidate';
 
-const Candidates ={
+
+const Candidates =[{
   id: 0,
   email: 'hey@gmail.com',
-  firstname: 'seb',
-  lastname: 'dac'
-};
+  firstName: 'seb',
+  lastName: 'dac'
+},{
+  id:1,
+  email:'ho@fmail.com',
+  firstName: 'adrian',
+  lastName:'ad'
+}
+];
 
 @Injectable({
   providedIn: 'root'
 })
 export class MockWebApiService implements WebApi {
 
-  constructor() { }
+  constructor() {
+  }
 
- 
-
-  createTodo(candidate: Candidate): Observable<Candidate> {
+  createCandidate(candidate: Candidate): Observable<Candidate> {
     throw new Error('Not implemented');
+  }
+  getCandidates(id: number): Observable<Candidate[]> {
+    return of(Candidates);
   }
 }
