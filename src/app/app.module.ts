@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WebApi } from './webapi/web-api';
-
+import { MockWebApiService } from './webapi/mock-web-api-services';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,8 +14,8 @@ import { WebApi } from './webapi/web-api';
     AppRoutingModule
   ],
   providers: [{
-    provide: WebApi
-    /*useClass: MockWebApiService */
+    provide: WebApi,
+    useClass: MockWebApiService 
   }, {
     provide: HTTP_INTERCEPTORS,
     useClass: LoadingInterceptor,
