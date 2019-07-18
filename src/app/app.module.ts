@@ -16,10 +16,6 @@ import { MockWebApiService } from './webapi/mock-web-api-services';
   providers: [{
     provide: WebApi,
     useClass: MockWebApiService 
-  }, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: LoadingInterceptor,
-    multi: true,
   }],
   bootstrap: [AppComponent]
 })
