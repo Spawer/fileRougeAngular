@@ -5,7 +5,7 @@ import { Question } from 'app/model/question';
 import { Observable } from 'rxjs';
 
 export abstract class WebApi implements CandidateApi, QuestionApi {
-  abstract createCandidate(candidate: Candidate): Candidate;
+  abstract createCandidate(candidate: Candidate):Observable<Candidate>;
   abstract getCandidate(id: number): Candidate;
   abstract createQuestion(question: Question): Observable<Question>;
   abstract getQuestionById(id: number): Observable<Question>;
