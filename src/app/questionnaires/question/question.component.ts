@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Question, QuestionType } from 'app/model/question';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-question',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionComponent implements OnInit {
 
+  @Input() public question: Question;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  get isMcq(): boolean {
+    return this.question.questionType === QuestionType.MCQ;
+  }
+
+  get isProgramming(): boolean {
+    return this.question.questionType === QuestionType.PROGRAMMING;
+  }
 }

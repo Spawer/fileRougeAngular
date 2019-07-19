@@ -1,1 +1,8 @@
-<p>question works!</p>
+<p>{{ question.statement }}</p>
+
+<app-proposition *ngIf='isProgramming'></app-proposition>
+<mat-list *ngIf='isMcq'>
+  <mat-list-item  *ngFor='let prop of question.propositions'>
+    <app-proposition [proposition]="prop"></app-proposition>
+  </mat-list-item>
+</mat-list>
