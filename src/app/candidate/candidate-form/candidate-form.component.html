@@ -1,1 +1,41 @@
-<p>candidate-form works!</p>
+<h1>Candidat</h1>
+<center>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+        <div class="form-group">
+          <label for="Fistname">
+            Prénom :
+          </label>
+          <input type="text" id="firstname" class="form-control" rows="1" cols="120" name="firstname" ngModel required>
+        </div>
+        <div class="form-group">
+          <label for="Lastname">
+            Nom :
+          </label>
+          <input type="text" id="lastname" class="form-control" rows="5" cols="120" name="lastname" ngModel required>
+        </div>
+        <label for="email">
+            E-mail :
+          </label>
+          <input type="email" id="email" class="form-control" rows="5" cols="120" name="email" ngModel email required>
+        </div>
+        <table border ="1">
+            <tr>
+                <td>
+        <p>Comment fonctionne ce test : </p>
+           <p> Une série de questions va vous être soumise.</p>
+            <p>Il vous faudra y répondre dans le temps imparti indiqué en haut à droite, chaque question ayant son propre timer.</p>
+            <p>Si vous répondez après la fin du temps, votre réponse ne sera pas prise en compte.</p>
+            <p>A la fin des questions, vous devrez valider votre questionnaire.</p>
+            <p>Bonne chance !</p>
+            <br>
+        </td>
+        </tr>
+        </table>
+        <br>
+        <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Valider et commencer le questionnaire</button>
+      </form>
+    </div>
+  </div>
+</center>

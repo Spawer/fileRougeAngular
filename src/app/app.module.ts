@@ -12,6 +12,9 @@ import { QuestionComponent } from './questionnaires/question/question.component'
 import { PropositionComponent } from './questionnaires/proposition/proposition.component';
 import { PropositionListComponent } from './questionnaires/proposition-list/proposition-list.component';
 import { QuestionListComponent } from './questionnaires/question-list/question-list.component';
+import { CandidateComponent } from './candidate/candidate.component';
+import { CandidateFormComponent } from './candidate/candidate-form/candidate-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,12 +25,15 @@ import { QuestionListComponent } from './questionnaires/question-list/question-l
     QuestionListComponent,
     QuestionnaireComponent,
     QuestionnaireFormComponent,
-    QuestionnaireListComponent
+    QuestionnaireListComponent,
+    CandidateComponent,
+    CandidateFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
